@@ -1,0 +1,31 @@
+######################################
+# Amit Shlomo 206994824
+#######################################
+
+########################################################################
+         Design Decisions, Challenges, and Implemented Solutions
+########################################################################
+
+#######################
+   Design Decisions
+#######################
+
+Simplicity: The language was designed to be simple and easy to understand, making it accessible for beginners.
+Basic Data Types: Support for integers, floats, strings, and lists to cover common use cases.
+Control Structures: Inclusion of basic control structures like conditionals and loops to allow for complex logic.
+
+#######################
+    Challenges
+#######################
+
+Error Handling: Implementing robust error handling to provide meaningful error messages and prevent crashes.
+Recursion: Ensuring that recursive function calls work correctly and efficiently.
+List Operations: Implementing list operations such as append, pop, and extend while maintaining performance.
+
+############################
+    Implemented Solutions
+############################
+
+Error Handling: Created custom error classes to handle different types of errors (e.g., syntax errors, runtime errors) and provide detailed error messages.
+Recursion: Implemented a call stack mechanism to handle recursive function calls and prevent stack overflow.
+List Operations: Used dynamic arrays to implement list operations efficiently, ensuring that operations like append and pop are performed in constant time.

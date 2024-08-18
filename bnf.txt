@@ -1,0 +1,72 @@
+######################################
+# Amit Shlomo 206994824
+#######################################
+
+#######################
+   BNF Documentation
+#######################
+
+<program> ::= <statements>
+<statements> ::= <statement> | <statement> <statements>
+<statement> ::= <expr> | "VAR" <identifier> "=" <expr> | "RETURN" <expr>? | "CONTINUE" | "BREAK"
+<expr> ::= <comp_expr> | <identifier> "=" <expr>
+<comp_expr> ::= <arith_expr> (("==" | "!=" | "<" | ">" | "<=" | ">=") <arith_expr>)*
+<arith_expr> ::= <term> (("+" | "-") <term>)*
+<term> ::= <factor> (("*" | "/") <factor>)*
+<factor> ::= ("+" | "-") <factor> | <power>
+<power> ::= <call> ("^" <factor>)*
+<call> ::= <atom> ("(" <expr> ("," <expr>)* ")")?
+<atom> ::= <number> | <string> | <identifier> | "(" <expr> ")" | "[" <expr> ("," <expr>)* "]" | "IF" <expr> "THEN" <statements> "END" | "FOR" <identifier> "=" <expr> "TO" <expr> ("STEP" <expr>)? "THEN" <statements> "END" | "WHILE" <expr> "THEN" <statements> "END" | "FUN" <identifier>? "(" <identifier> ("," <identifier>)* ")" "THEN" <statements> "END"
+<number> ::= <digit>+
+<string> ::= "\"" <character>* "\""
+<identifier> ::= <letter> (<letter> | <digit>)*
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<letter> ::= "a" | "b" | "c" | ... | "z" | "A" | "B" | ... | "Z"
+<character> ::= <letter> | <digit> | <symbol>
+<symbol> ::= "!" | "@" | "#" | "$" | "%" | "^" | "&" | "*" | "(" | ")" | "-" | "_" | "=" | "+" | "{" | "}" | "[" | "]" | "|" | "\\" | ":" | ";" | "\"" | "'" | "<" | ">" | "," | "." | "?" | "/"
+
+########################
+   Language Syntax
+########################
+
+Variables and Declarations:
+Variable declaration: VAR <identifier> = <expr>
+Variable access: <identifier>
+
+Expressions:
+Arithmetic expressions: <term> + <term>, <term> - <term>, <term> * <term>, <term> / <term>, <term> ^ <term>
+Comparison expressions: <arith_expr> == <arith_expr>, <arith_expr> != <arith_expr>, <arith_expr> < <arith_expr>, <arith_expr> > <arith_expr>, <arith_expr> <= <arith_expr>, <arith_expr> >= <arith_expr>
+
+Logical Expressions:
+AND, OR, NOT
+
+Control Statements:
+Conditionals: IF <expr> THEN <statements> END
+Loops: FOR <identifier> = <expr> TO <expr> (STEP <expr>)? THEN <statements> END, WHILE <expr> THEN <statements> END
+
+Functions:
+Function definition: FUN <identifier>? (<identifier> ("," <identifier>)*) THEN <statements> END
+Function call: <identifier>(<expr> ("," <expr>)*)
+
+Lists:
+List creation: [<expr> ("," <expr>)*]
+List access: <identifier>[<expr>]
+
+########################
+   Language Features
+########################
+
+Data Types: Integers, floats, strings, lists.
+Variables: Variables are defined using the VAR keyword.
+Built-in Functions: Functions like print, input, len, append, pop, extend, and more.
+Error Handling: Syntax and runtime error handling.
+Control Structures: Support for conditionals (if-else) and loops (for, while).
+Function Support: Defining functions with parameters and returning values.
+
+#########################################
+   Language Compromises and Limitations
+#########################################
+
+Simplicity: The language is designed to be simple and easy to understand, lacking advanced features like classes and inheritance.
+Performance: The language is not optimized for high performance, which may result in slower execution for complex computations or large data sets.
+Limited Syntax: The syntax is limited to basic expressions and simple control structures.

@@ -1,0 +1,59 @@
+######################################
+# Amit Shlomo 206994824
+#######################################
+
+############################################
+   User Guide for Running the Interpreter
+############################################
+
+Mode 1: Running the Interpreter from a File
+Preparing the File:
+Ensure the file contains the code you want to execute.
+Save the file in a text format (e.g., .txt or .py).
+Running the Interpreter:
+Open the Command Prompt or Terminal.
+Navigate to the directory where your file is located using the cd command.
+Run the interpreter with the file using the command:
+python interpreter.py <filename>
+For example:
+python interpreter.py myscript.txt
+
+Mode 2: Running the Interpreter in Interactive Mode
+Starting the Interpreter:
+Open the Command Prompt or Terminal.
+Navigate to the directory where the interpreter.py file is located using the cd command.
+Start the interpreter using the command:
+python interpreter.py
+
+Using Interactive Mode:
+After starting the interpreter, you can type commands directly and see the results immediately.
+For example, you can type:
+VAR x = 10
+PRINT(x)
+
+The interpreter will execute the commands and display the result.
+Examples of Using the Interpreter
+Example of Running a File
+Suppose you have a file named example.txt with the following content:
+
+VAR x = 5
+VAR y = 10
+PRINT(x + y)
+
+To run the file, use the command:
+
+python interpreter.py example.txt
+
+The output will be:
+
+15
+
+Example of Using Interactive Mode
+After starting the interpreter in interactive mode, you can type commands like:
+
+VAR name = "John"
+PRINT("Hello, " + name + "!")
+
+The output will be:
+
+Hello, John!
